@@ -32,10 +32,10 @@ def main() -> None:
                 name=guild["name"],
                 description=guild["description"]
             )
-            character.guild_id = Guild.objects.get(name=guild["name"]).id
+            character.guild = Guild.objects.get(name=guild["name"])
         character.save()
 
-        skill_exists = race.get("skills")
+        skill_exists = user["race"].get("skills")
         if skill_exists:
             for skill in skill_exists:
                 Skill.objects.get_or_create(
