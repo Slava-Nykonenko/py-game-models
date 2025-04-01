@@ -8,8 +8,8 @@ def main() -> None:
     Skill.objects.all().delete()
     Player.objects.all().delete()
     Guild.objects.all().delete()
-    with open("players.json", "r") as f:
-        players = json.load(f)
+    with open("players.json", "r") as file:
+        players = json.load(file)
 
     for player in players:
         user = players[player]
